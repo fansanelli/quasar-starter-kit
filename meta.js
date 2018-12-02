@@ -109,12 +109,12 @@ module.exports = {
         {
           name: 'Cypress (https://github.com/cypress-io/cypress)',
           value: 'cypress',
-          short: 'cypress',
+          short: 'Cypress',
         },
         {
           name: 'WebDriverIO (https://github.com/webdriverio/webdriverio)',
           value: 'wdio',
-          short: 'wdio',
+          short: 'WebDriverIO',
         },
         {
           name: 'none (configure it yourself)',
@@ -162,8 +162,8 @@ module.exports = {
     'src/plugins/axios.js': 'preset.axios',
     'jest.config.js': 'preset.jest',
     'test/jest/**/*': 'preset.jest',
-    'test/cypress/**/*': 'e2eConfig.cypress',
-    'test/webdriver/**/*': 'e2eConfig.wdio',
+    'test/cypress/**/*': 'e2eConfig === \'cypress\'',
+    'test/webdriver/**/*': 'e2eConfig === \'wdio\'',
     'test/audits/**/*': 'preset.audit',
     'test/lighthouse/**/*': 'preset.audit'
   },
