@@ -64,6 +64,18 @@ module.exports = {
         {
           name: 'IE11 support',
           value: 'ie'
+        },
+        {
+          name: 'Jest',
+          value: 'jest'
+        },
+        {
+          name: 'e2e support',
+          value: 'e2e'
+        },
+        {
+          name: 'Audit support',
+          value: 'audit'
         }
       ]
     },
@@ -81,6 +93,28 @@ module.exports = {
           name: 'Airbnb (https://github.com/airbnb/javascript)',
           value: 'airbnb',
           short: 'Airbnb',
+        },
+        {
+          name: 'none (configure it yourself)',
+          value: 'none',
+          short: 'none',
+        }
+      ]
+    },
+    e2eConfig: {
+      when: 'preset.e2e',
+      type: 'list',
+      message: 'Choose an e2e framework',
+      choices: [
+        {
+          name: 'Cypress (https://github.com/cypress-io/cypress)',
+          value: 'cypress',
+          short: 'cypress',
+        },
+        {
+          name: 'WebDriverIO (https://github.com/webdriverio/webdriverio)',
+          value: 'wdio',
+          short: 'wdio',
         },
         {
           name: 'none (configure it yourself)',
@@ -125,7 +159,13 @@ module.exports = {
     'src/store/**/*': 'preset.vuex',
     'src/i18n/**/*': 'preset.i18n',
     'src/plugins/i18n.js': 'preset.i18n',
-    'src/plugins/axios.js': 'preset.axios'
+    'src/plugins/axios.js': 'preset.axios',
+    'jest.config.js': 'preset.jest',
+    'test/jest/**/*': 'preset.jest',
+    'test/cypress/**/*': 'e2eConfig.cypress',
+    'test/webdriver/**/*': 'e2eConfig.wdio',
+    'test/audits/**/*': 'preset.audit',
+    'test/lighthouse/**/*': 'preset.audit'
   },
   complete: function(data, { chalk }) {
     const green = chalk.green
